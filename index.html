@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelas Mahasiswa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="glow-bg"></div>
+
+    <div class="main-wrapper">
+        <header class="main-header">
+            <div class="header-titles">
+                <h1>Kelas<span>Mahasiswa</span></h1>
+                <p>Gedung Djuanda (Lantai 3 - 6)</p>
+            </div>
+        </header>
+
+        <div class="floor-filter">
+            <button class="filter-btn active" id="btn-lantai-3" onclick="gantiLantai(3)">Lantai 3</button>
+            <button class="filter-btn" id="btn-lantai-4" onclick="gantiLantai(4)">Lantai 4</button>
+            <button class="filter-btn" id="btn-lantai-5" onclick="gantiLantai(5)">Lantai 5</button>
+            <button class="filter-btn" id="btn-lantai-6" onclick="gantiLantai(6)">Lantai 6</button>
+        </div>
+
+        <div id="ruanganContainer">
+            </div>
+    </div>
+
+
+    <div id="laporModal" class="modal">
+        <div class="modal-content glass">
+            <h3 id="modalTitle" class="neon-text">Lapor Kerusakan</h3>
+            <p class="subtitle">Terkoneksi langsung ke WhatsApp Pengurus.</p>
+            
+            <form id="laporForm">
+                <div class="form-group">
+                    <label for="itemRusak">Fasilitas yang Rusak</label>
+                    <select id="itemRusak" required>
+                        <option value="" class="dark-option">Pilih Fasilitas</option>
+                        <option value="AC" class="dark-option">AC</option>
+                        <option value="Proyektor" class="dark-option">Proyektor</option>
+                        <option value="Smart TV" class="dark-option">Smart TV</option>
+                        <option value="Lampu" class="dark-option">Lampu</option>
+                        <option value="Lainnya" class="dark-option">Lainnya</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="catatanRusak">Deskripsi Kerusakan</label>
+                    <textarea id="catatanRusak" rows="3" placeholder="Contoh: AC netes air..." required></textarea>
+                </div>
+                
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-outline" onclick="tutupModal('laporModal')">Batal</button>
+                    <button type="submit" class="btn btn-primary">Kirim via WA</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="jadwalModal" class="modal">
+        <div class="modal-content glass">
+            <h3 id="jadwalTitle" class="neon-text">Jadwal Hari Ini</h3>
+            
+            <ul id="daftarJadwal" class="jadwal-list">
+                </ul>
+            
+            <div class="modal-actions">
+                <button class="btn btn-primary" onclick="tutupModal('jadwalModal')">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content glass">
+            <h3 id="bookingTitle" class="neon-text">Booking Ruangan</h3>
+            
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="namaKelompok">Nama Organisasi / Kelompok</label>
+                    <input type="text" id="namaKelompok" placeholder="Contoh: BEM / Kelompok 1" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="waktuPinjam">Waktu Pinjam</label>
+                    <select id="waktuPinjam" required>
+                        <option value="" class="dark-option">Pilih Waktu Kosong</option>
+                        <option value="08:00 - 10.00" class="dark-option">08:00 - 10:00</option>
+                        <option value="13:00 - 15:00" class="dark-option">13:00 - 15:00</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="kegiatanKelompok">Kegiatan</label>
+                    <input type="text" id="kegiatanKelompok" placeholder="Contoh: Rapat Evaluasi" required>
+                </div>
+                
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-outline" onclick="tutupModal('bookingModal')">Batal</button>
+                    <button type="submit" class="btn btn-purple">Konfirmasi</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
