@@ -79,13 +79,16 @@ body {
 /* =========================================
    4. MENU FILTER LANTAI
    ========================================= */
+/* =========================================
+   4. MENU FILTER LANTAI
+   ========================================= */
 .floor-filter { 
     display: flex; 
     gap: 10px; 
     justify-content: center; 
+    flex-wrap: wrap; /* <--- KUNCI RESPONSIF: Tombol otomatis turun jika layar HP sempit */
     margin-bottom: 2rem; 
-    overflow-x: auto; 
-    padding-bottom: 5px; 
+    padding: 0 10px; 
 }
 
 .filter-btn {
@@ -113,7 +116,6 @@ body {
     background: var(--accent-blue); 
     box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3); 
 }
-
 /* =========================================
    5. KARTU RUANGAN (EFEK LIGHT GLASSMORPHISM)
    ========================================= */
