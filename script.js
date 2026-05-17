@@ -113,7 +113,7 @@ document.getElementById('laporForm').onsubmit = function(e) {
     let catatan = document.getElementById('catatanRusak').value;
     const msg = `Halo Pengurus,\n\nAda laporan kerusakan di *Djuanda ${currentRoomBooking}*.\n\nFasilitas: ${fasilitas}\nInfo Tambahan: ${catatan}\n\nMohon dicek.`;
     
-    // Buka tab WA (Ganti nomor ini saat demo jika perlu)
+    // Buka tab WA
     window.open(`https://wa.me/628345678910?text=${encodeURIComponent(msg)}`);
     
     this.reset();
