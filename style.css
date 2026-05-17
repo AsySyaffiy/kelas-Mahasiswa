@@ -1,26 +1,22 @@
 /* Import Font Futuristik dari Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
+   /* 1. VARIABEL TEMA (LIGHT GREY GLASS MODERN) */
 
-/* =========================================
-   1. VARIABEL TEMA (LIGHT GREY GLASS MODERN)
-   ========================================= */
 :root {
-    --bg-dark: #e2e8f0; /* Latar belakang abu-abu terang yang lembut (Slate 200) */
-    --accent-blue: #3b82f6; /* Biru modern sebagai warna utama */
+    --bg-dark: #e2e8f0;
+    --accent-blue: #3b82f6; 
     --accent-blue-hover: #2563eb; 
-    --accent-slate: #475569; /* Abu-abu kebiruan gelap untuk tombol variasi */
+    --accent-slate: #475569; 
     --accent-slate-hover: #334155;
-    --kosong-color: #10b981; /* Hijau modern */
-    --dipakai-color: #ef4444; /* Merah modern */
-    --text-main: #1e293b; /* Teks utama: Abu-abu sangat gelap (hampir hitam) */
-    --text-muted: #64748b; /* Teks sekunder: Abu-abu menengah */
-    --glass-bg: rgba(255, 255, 255, 0.65); /* Efek kaca frosted white (putih semi-transparan) */
-    --glass-border: rgba(255, 255, 255, 0.8); /* Border putih tegas untuk efek tepi kaca */
+    --kosong-color: #10b981; 
+    --dipakai-color: #ef4444;
+    --text-main: #1e293b; 
+    --text-muted: #64748b; 
+    --glass-bg: rgba(255, 255, 255, 0.65); 
+    --glass-border: rgba(255, 255, 255, 0.8); 
 }
 
-/* =========================================
-   2. PENGATURAN DASAR & RESET
-   ========================================= */
+         /* 2. PENGATURAN DASAR & RESET */
 * { 
     box-sizing: border-box; 
     margin: 0; 
@@ -35,7 +31,7 @@ body {
     overflow-x: hidden; 
 }
 
-/* Efek cahaya putih lembut di latar belakang untuk memperkuat efek kaca */
+/* Efek cahaya putih */
 .glow-bg {
     position: fixed; 
     top: -20%; 
@@ -52,9 +48,7 @@ body {
     padding: 2rem 1rem; 
 }
 
-/* =========================================
-   3. HEADER UTAMA
-   ========================================= */
+                /* 3. HEADER UTAMA */
 .main-header { 
     text-align: center; 
     margin-bottom: 2rem; 
@@ -75,18 +69,12 @@ body {
     font-size: 0.9rem; 
     margin-top: 5px; 
 }
-
-/* =========================================
-   4. MENU FILTER LANTAI
-   ========================================= */
-/* =========================================
-   4. MENU FILTER LANTAI
-   ========================================= */
+                                    /* 4. MENU FILTER LANTAI */
 .floor-filter { 
     display: flex; 
     gap: 10px; 
     justify-content: center; 
-    flex-wrap: wrap; /* <--- KUNCI RESPONSIF: Tombol otomatis turun jika layar HP sempit */
+    flex-wrap: wrap;
     margin-bottom: 2rem; 
     padding: 0 10px; 
 }
@@ -116,9 +104,9 @@ body {
     background: var(--accent-blue); 
     box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3); 
 }
-/* =========================================
-   5. KARTU RUANGAN (EFEK LIGHT GLASSMORPHISM)
-   ========================================= */
+
+   /* 5. KARTU RUANGAN (EFEK LIGHT GLASSMORPHISM) */
+
 .glass { 
     background: var(--glass-bg); 
     -webkit-backdrop-filter: blur(16px); 
@@ -161,9 +149,8 @@ body {
     margin-bottom: 1.2rem; 
 }
 
-/* =========================================
-   6. LABEL STATUS (KOSONG/DIPAKAI)
-   ========================================= */
+   /* 6. LABEL STATUS (KOSONG/DIPAKAI) */
+
 .status { 
     padding: 0.4rem 1rem; 
     border-radius: 30px; 
@@ -184,9 +171,8 @@ body {
     background: rgba(239, 68, 68, 0.1); 
 }
 
-/* =========================================
-   7. KOTAK INFO BOOKING & TOMBOL BATAL (X)
-   ========================================= */
+   /* 7. KOTAK INFO BOOKING & TOMBOL BATAL (X) */
+
 .booking-info { 
     background: rgba(59, 130, 246, 0.05); 
     border-left: 3px solid var(--accent-blue); 
@@ -233,9 +219,8 @@ body {
     transform: scale(1.2); 
 }
 
-/* =========================================
-   8. TOMBOL-TOMBOL AKSI (BUTTONS)
-   ========================================= */
+   /* 8. TOMBOL-TOMBOL AKSI (BUTTONS) */
+  
 .action-buttons { 
     display: grid; 
     grid-template-columns: 1fr 1fr; 
@@ -305,9 +290,8 @@ body {
     background: rgba(245, 158, 11, 0.05); 
 }
 
-/* =========================================
-   9. MODAL (POP-UP) & FORMULIR INPUT
-   ========================================= */
+   /* 9. MODAL (POP-UP) & FORMULIR INPUT */
+
 .modal { 
     display: none; 
     position: fixed; 
@@ -384,9 +368,9 @@ input:focus, select:focus, textarea:focus {
     margin-top: 1.5rem; 
 }
 
-/* =========================================
-   10. DAFTAR JADWAL
-   ========================================= */
+
+   /* 10. DAFTAR JADWAL */
+
 .jadwal-list { 
     margin: 1rem 0; 
     padding-left: 1rem; 
