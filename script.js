@@ -1,10 +1,8 @@
-// ==========================================
 // 1. DATABASE RUANGAN
-// ==========================================
 let dataRuangan = {};
 let currentRoomBooking = ""; // Menyimpan ID ruangan yang sedang diproses (booking/lapor)
 
-// Generate otomatis 28 Ruangan (Lantai 3-6, masing-masing 7 ruangan)
+// membuat 28 Ruangan (Lantai 3-6/kelas 7 ruangan)
 function initData() {
     for (let l = 3; l <= 6; l++) {
         for (let n = 1; n <= 7; n++) {
@@ -20,10 +18,8 @@ function initData() {
 // Jalankan fungsi saat web dimuat
 initData();
 
-
-// ==========================================
 // 2. RENDER TAMPILAN SESUAI LANTAI
-// ==========================================
+
 function gantiLantai(lantai) {
     // Ubah warna tombol filter agar aktif
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -86,9 +82,9 @@ function gantiLantai(lantai) {
 gantiLantai(3);
 
 
-// ==========================================
+
 // 3. FUNGSI MENGUBAH STATUS (KUNCI/BUKA)
-// ==========================================
+
 function toggleStatus(id) {
     // Toggle status di database
     dataRuangan[id].status = dataRuangan[id].status === 'kosong' ? 'dipakai' : 'kosong';
@@ -96,18 +92,14 @@ function toggleStatus(id) {
     gantiLantai(id.charAt(0));
 }
 
-
-// ==========================================
 // 4. FUNGSI UMUM MODAL
-// ==========================================
+
 function tutupModal(id) { 
     document.getElementById(id).style.display = 'none'; 
 }
 
-
-// ==========================================
 // 5. FITUR LAPOR KERUSAKAN VIA WA
-// ==========================================
+
 function bukaLapor(id) {
     currentRoomBooking = id;
     document.getElementById('modalTitle').innerText = `Lapor: Djuanda ${id}`;
@@ -128,17 +120,15 @@ document.getElementById('laporForm').onsubmit = function(e) {
     tutupModal('laporModal');
 };
 
-
-// ==========================================
 // 6. FITUR LIHAT JADWAL KELAS
-// ==========================================
+
 function bukaJadwal(id) {
     document.getElementById('jadwalTitle').innerText = `Jadwal Djuanda ${id}`;
     
     // Simulasi jadwal bawaan
     let htmlJadwal = `
         <li><strong style="color: var(--kosong-color);">08:00 - 10:00: Kosong</strong></li>
-        <li><span style="color: white;">10:00 - 12:00: Rekayasa Perangkat Lunak TI24B</span></li>
+        <li><span style="color: gray;">10:00 - 12:00: Rekayasa Perangkat Lunak TI24B</span></li>
         <li><strong style="color: var(--kosong-color);">13:00 - 15:00: Kosong</strong></li>
     `;
     
@@ -146,10 +136,8 @@ function bukaJadwal(id) {
     document.getElementById('jadwalModal').style.display = 'flex';
 }
 
-
-// ==========================================
 // 7. FITUR BOOKING & BATALKAN BOOKING
-// ==========================================
+
 function bukaBooking(id) {
     currentRoomBooking = id;
     document.getElementById('bookingTitle').innerText = `Booking Djuanda ${id}`;
@@ -173,7 +161,7 @@ document.getElementById('bookingForm').onsubmit = function(e) {
     gantiLantai(currentRoomBooking.charAt(0));
 };
 
-// Proses Menghapus Booking (Tombol X)
+// Menghapus Booking (X)
 function hapusBooking(id) {
     let konfirmasi = confirm(`Apakah Anda yakin ingin membatalkan jadwal booking untuk ruangan Djuanda ${id}?`);
     if (konfirmasi) {
